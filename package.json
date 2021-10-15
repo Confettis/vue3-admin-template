@@ -5,7 +5,11 @@
     "dev": "vite --mode development",
     "build:beta": "vue-tsc --noEmit && vite build --mode beta",
     "build:release": "vue-tsc --noEmit && vite build --mode release",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{vue,js,jsx,ts,tsx}": "eslint --fix"
   },
   "dependencies": {
     "axios": "^0.23.0",
@@ -17,7 +21,18 @@
   },
   "devDependencies": {
     "@types/node": "^16.11.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
     "@vitejs/plugin-vue": "^1.9.3",
+    "eslint": "^8.0.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^7.19.1",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.2.3",
+    "prettier": "^2.4.1",
     "sass": "^1.43.2",
     "typescript": "^4.4.3",
     "vite": "^2.6.4",
