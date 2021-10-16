@@ -1,16 +1,23 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from 'views/Home.vue'
 
-const routes: Array<RouteRecordRaw> = [
+type RouteConfig = RouteRecordRaw & { hidden?: boolean }
+
+const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'Home',
     component: Home,
+    hidden: true,
+    meta: {
+      permission: true,
+      icon: '',
+    },
   },
   {
     path: '/about',
     name: 'About',
-    component: () => import('views/About.vue'),
+    component: () => import(/* webpackChunkName: "about" */ 'views/About.vue'),
   },
 ]
 
