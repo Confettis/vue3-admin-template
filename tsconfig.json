@@ -39,7 +39,11 @@
       "views/*": [
         "./src/views/*"
       ]
-    }
+    },
+    "types": [
+      "vite/client",
+      "jest"
+    ]
   },
   "include": [
     "src/**/*.ts",
